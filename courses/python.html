@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Basics - LearnIQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .article-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+
+        .article-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .article-content h1 {
+            color: #00A676;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .article-content h2 {
+            color: #333;
+            margin: 30px 0 15px;
+            font-size: 1.8em;
+        }
+
+        .article-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            display: block;
+            white-space: pre;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .table-of-contents h2 {
+            color: #00A676;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin: 10px 0;
+        }
+
+        .table-of-contents a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #00A676;
+        }
+
+        .python-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .python-table th, .python-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .python-table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .property-example {
+            font-family: 'Courier New', Courier, monospace;
+            color: #00A676;
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-of-contents {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../courses.html">Courses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <article class="article-content">
+            <h1>Python Basics for Beginners</h1>
+            
+            <p>Python is a versatile, high-level programming language known for its simplicity and readability. This guide will help you understand the fundamentals of Python programming.</p>
+
+            <h2>Introduction to Python</h2>
+            <p>Python is an interpreted, high-level programming language that emphasizes code readability with its notable use of significant whitespace. It's widely used in web development, data science, artificial intelligence, and more.</p>
+
+            <div class="code-block">
+                <code># Your first Python program
+print("Hello, World!")</code>
+            </div>
+
+            <h2>Variables and Data Types</h2>
+            <p>Python has several built-in data types for storing different kinds of data:</p>
+            
+            <table class="python-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property-example">int</td>
+                        <td>Integer numbers</td>
+                        <td><code>age = 25</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">float</td>
+                        <td>Floating point numbers</td>
+                        <td><code>price = 19.99</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">str</td>
+                        <td>Text strings</td>
+                        <td><code>name = "John"</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">bool</td>
+                        <td>Boolean values</td>
+                        <td><code>is_student = True</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">list</td>
+                        <td>Mutable sequence of items</td>
+                        <td><code>fruits = ["apple", "banana"]</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">dict</td>
+                        <td>Key-value pairs</td>
+                        <td><code>person = {"name": "John", "age": 25}</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Functions</h2>
+            <p>Functions are reusable blocks of code that perform specific tasks:</p>
+            
+            <div class="code-block">
+                <code># Function definition
+def greet(name):
+    return f"Hello, {name}!"
+
+# Function with default parameters
+def greet_user(name="User"):
+    print(f"Hello, {name}!")
+
+# Lambda function
+square = lambda x: x ** 2</code>
+            </div>
+
+            <h2>Control Flow</h2>
+            <p>Python provides various control flow statements:</p>
+            
+            <div class="code-block">
+                <code># if-else statement
+if age >= 18:
+    print("You are an adult")
+else:
+    print("You are a minor")
+
+# for loop
+for i in range(5):
+    print(i)
+
+# while loop
+count = 0
+while count < 3:
+    print(count)
+    count += 1</code>
+            </div>
+
+            <h2>Lists and Dictionaries</h2>
+            <p>Python provides powerful data structures:</p>
+            
+            <div class="code-block">
+                <code># List operations
+fruits = ["apple", "banana", "orange"]
+fruits.append("grape")  # Add item
+fruits.remove("banana")  # Remove item
+print(fruits[0])  # Access item
+
+# Dictionary operations
+person = {
+    "name": "John",
+    "age": 25,
+    "city": "New York"
+}
+print(person["name"])  # Access value
+person["email"] = "john@example.com"  # Add key-value pair</code>
+            </div>
+
+            <h2>Classes and Objects</h2>
+            <p>Python supports object-oriented programming:</p>
+            
+            <div class="code-block">
+                <code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def display(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+# Create object
+person = Person("John", 25)
+person.display()</code>
+            </div>
+
+            <h2>File Handling</h2>
+            <p>Python makes it easy to work with files:</p>
+            
+            <div class="code-block">
+                <code># Reading from file
+with open("file.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+# Writing to file
+with open("file.txt", "w") as file:
+    file.write("Hello, World!")</code>
+            </div>
+
+            <h2>Exception Handling</h2>
+            <p>Python provides try-except blocks for error handling:</p>
+            
+            <div class="code-block">
+                <code>try:
+    # Code that might raise an exception
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except Exception as e:
+    print(f"An error occurred: {e}")</code>
+            </div>
+
+            <h2>Modules and Packages</h2>
+            <p>Python has a rich ecosystem of modules and packages:</p>
+            
+            <div class="code-block">
+                <code># Importing modules
+import math
+import random
+
+# Using module functions
+print(math.pi)
+print(random.randint(1, 10))</code>
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>Python is a versatile and beginner-friendly programming language that's widely used in various fields. Understanding these basics will help you build a strong foundation for your programming journey.</p>
+
+            <h2>FAQs</h2>
+            <p><strong>Q: What is Python?</strong><br>
+            A: Python is a high-level, interpreted programming language known for its simplicity and readability.</p>
+
+            <p><strong>Q: What are Python's main features?</strong><br>
+            A: Python features include dynamic typing, automatic memory management, and a comprehensive standard library.</p>
+
+            <p><strong>Q: What can you build with Python?</strong><br>
+            A: Python can be used for web development, data science, artificial intelligence, automation, and more.</p>
+        </article>
+
+        <aside class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction to Python</a></li>
+                <li><a href="#variables">Variables and Data Types</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#control-flow">Control Flow</a></li>
+                <li><a href="#lists">Lists and Dictionaries</a></li>
+                <li><a href="#classes">Classes and Objects</a></li>
+                <li><a href="#files">File Handling</a></li>
+                <li><a href="#exceptions">Exception Handling</a></li>
+                <li><a href="#modules">Modules and Packages</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <script>
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

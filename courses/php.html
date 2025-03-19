@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Basics - LearnIQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .article-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+
+        .article-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .article-content h1 {
+            color: #00A676;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .article-content h2 {
+            color: #333;
+            margin: 30px 0 15px;
+            font-size: 1.8em;
+        }
+
+        .article-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            display: block;
+            white-space: pre;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .table-of-contents h2 {
+            color: #00A676;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin: 10px 0;
+        }
+
+        .table-of-contents a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #00A676;
+        }
+
+        .php-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .php-table th, .php-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .php-table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .property-example {
+            font-family: 'Courier New', Courier, monospace;
+            color: #00A676;
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-of-contents {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../courses.html">Courses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <article class="article-content">
+            <h1>PHP Basics for Beginners</h1>
+            
+            <p>PHP is a server-side scripting language designed for web development. This guide will help you understand the fundamentals of PHP programming.</p>
+
+            <h2>Introduction to PHP</h2>
+            <p>PHP (Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML.</p>
+
+            <div class="code-block">
+                <code><?php
+// Your first PHP program
+echo "Hello, World!";
+
+// Variables
+$name = "John";
+$age = 25;
+
+// String concatenation
+echo "My name is " . $name . " and I am " . $age . " years old.";</code>
+            </div>
+
+            <h2>Variables and Data Types</h2>
+            <p>PHP has several data types for storing different kinds of data:</p>
+            
+            <table class="php-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property-example">String</td>
+                        <td>Text data</td>
+                        <td><code>$name = "John";</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">Integer</td>
+                        <td>Whole numbers</td>
+                        <td><code>$age = 25;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">Float</td>
+                        <td>Decimal numbers</td>
+                        <td><code>$price = 19.99;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">Boolean</td>
+                        <td>True/False values</td>
+                        <td><code>$is_student = true;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">Array</td>
+                        <td>Collection of values</td>
+                        <td><code>$fruits = ["apple", "banana"];</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">Object</td>
+                        <td>Instance of a class</td>
+                        <td><code>$person = new Person();</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Functions</h2>
+            <p>Functions are reusable blocks of code that perform specific tasks:</p>
+            
+            <div class="code-block">
+                <code><?php
+// Function definition
+function greet($name) {
+    return "Hello, " . $name . "!";
+}
+
+// Function with default parameters
+function greet_user($name = "User") {
+    echo "Hello, " . $name . "!";
+}
+
+// Arrow function (PHP 7.4+)
+$square = fn($x) => $x * $x;</code>
+            </div>
+
+            <h2>Control Flow</h2>
+            <p>PHP provides various control flow statements:</p>
+            
+            <div class="code-block">
+                <code><?php
+// if-else statement
+if ($age >= 18) {
+    echo "You are an adult";
+} else {
+    echo "You are a minor";
+}
+
+// for loop
+for ($i = 0; $i < 5; $i++) {
+    echo $i;
+}
+
+// while loop
+$count = 0;
+while ($count < 3) {
+    echo $count;
+    $count++;
+}</code>
+            </div>
+
+            <h2>Arrays and Objects</h2>
+            <p>PHP provides powerful data structures:</p>
+            
+            <div class="code-block">
+                <code><?php
+// Array operations
+$fruits = ["apple", "banana", "orange"];
+array_push($fruits, "grape");  // Add item
+array_pop($fruits);  // Remove last item
+echo $fruits[0];  // Access item
+
+// Associative array
+$person = [
+    "name" => "John",
+    "age" => 25,
+    "city" => "New York"
+];
+echo $person["name"];  // Access value</code>
+            </div>
+
+            <h2>Forms and User Input</h2>
+            <p>PHP makes it easy to handle form submissions:</p>
+            
+            <div class="code-block">
+                <code><?php
+// HTML Form
+echo '<form method="POST" action="">
+    <input type="text" name="username">
+    <input type="submit" value="Submit">
+</form>';
+
+// Processing form data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    echo "Welcome, " . htmlspecialchars($username);
+}</code>
+            </div>
+
+            <h2>Database Connection</h2>
+            <p>PHP provides database connectivity:</p>
+            
+            <div class="code-block">
+                <code><?php
+// MySQL connection
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "database";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}</code>
+            </div>
+
+            <h2>Error Handling</h2>
+            <p>PHP provides various error handling mechanisms:</p>
+            
+            <div class="code-block">
+                <code><?php
+try {
+    // Code that might throw an exception
+    throw new Exception("An error occurred");
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+// Error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);</code>
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>PHP is a powerful server-side scripting language that's essential for web development. Understanding these basics will help you build dynamic and interactive web applications.</p>
+
+            <h2>FAQs</h2>
+            <p><strong>Q: What is PHP?</strong><br>
+            A: PHP is a server-side scripting language designed for web development.</p>
+
+            <p><strong>Q: What are PHP's main features?</strong><br>
+            A: PHP features include database integration, form handling, session management, and extensive library support.</p>
+
+            <p><strong>Q: What can you build with PHP?</strong><br>
+            A: PHP can be used to build dynamic websites, web applications, content management systems, and e-commerce platforms.</p>
+        </article>
+
+        <aside class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction to PHP</a></li>
+                <li><a href="#variables">Variables and Data Types</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#control-flow">Control Flow</a></li>
+                <li><a href="#arrays">Arrays and Objects</a></li>
+                <li><a href="#forms">Forms and User Input</a></li>
+                <li><a href="#database">Database Connection</a></li>
+                <li><a href="#errors">Error Handling</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <script>
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

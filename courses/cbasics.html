@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Basics - LearnIQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .article-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+
+        .article-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .article-content h1 {
+            color: #00A676;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .article-content h2 {
+            color: #333;
+            margin: 30px 0 15px;
+            font-size: 1.8em;
+        }
+
+        .article-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            display: block;
+            white-space: pre;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .table-of-contents h2 {
+            color: #00A676;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin: 10px 0;
+        }
+
+        .table-of-contents a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #00A676;
+        }
+
+        .c-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .c-table th, .c-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .c-table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .property-example {
+            font-family: 'Courier New', Courier, monospace;
+            color: #00A676;
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-of-contents {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../courses.html">Courses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <article class="article-content">
+            <h1>C Programming Basics for Beginners</h1>
+            
+            <p>C is a powerful and efficient programming language that has been widely used for system programming and software development. This guide will help you understand the fundamentals of C programming.</p>
+
+            <h2>Introduction to C</h2>
+            <p>C is a general-purpose, procedural programming language developed by Dennis Ritchie in 1972. It's known for its efficiency, portability, and low-level access to memory.</p>
+
+            <div class="code-block">
+                <code>#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}</code>
+            </div>
+
+            <h2>Variables and Data Types</h2>
+            <p>C has several basic data types for storing different kinds of data:</p>
+            
+            <table class="c-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property-example">int</td>
+                        <td>Integer values</td>
+                        <td><code>int age = 25;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">float</td>
+                        <td>Single precision decimal</td>
+                        <td><code>float price = 19.99;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">double</td>
+                        <td>Double precision decimal</td>
+                        <td><code>double pi = 3.14159;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">char</td>
+                        <td>Single character</td>
+                        <td><code>char grade = 'A';</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">void</td>
+                        <td>No value</td>
+                        <td><code>void function();</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Functions</h2>
+            <p>Functions are reusable blocks of code that perform specific tasks:</p>
+            
+            <div class="code-block">
+                <code>// Function declaration
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function with void return type
+void greet(char name[]) {
+    printf("Hello, %s!\n", name);
+}</code>
+            </div>
+
+            <h2>Control Flow</h2>
+            <p>C provides various control flow statements:</p>
+            
+            <div class="code-block">
+                <code>// if-else statement
+if (age >= 18) {
+    printf("You are an adult\n");
+} else {
+    printf("You are a minor\n");
+}
+
+// for loop
+for (int i = 0; i < 5; i++) {
+    printf("%d\n", i);
+}
+
+// while loop
+int count = 0;
+while (count < 3) {
+    printf("%d\n", count);
+    count++;
+}</code>
+            </div>
+
+            <h2>Arrays and Pointers</h2>
+            <p>C provides powerful data structures and memory management:</p>
+            
+            <div class="code-block">
+                <code>// Array declaration and initialization
+int numbers[5] = {1, 2, 3, 4, 5};
+
+// Pointer declaration and usage
+int *ptr = &numbers[0];
+printf("First element: %d\n", *ptr);
+
+// Array using pointer arithmetic
+for (int i = 0; i < 5; i++) {
+    printf("%d ", *(ptr + i));
+}</code>
+            </div>
+
+            <h2>Structures</h2>
+            <p>Structures allow you to group related data:</p>
+            
+            <div class="code-block">
+                <code>// Structure definition
+struct Student {
+    char name[50];
+    int age;
+    float gpa;
+};
+
+// Structure usage
+struct Student student1 = {"John", 20, 3.5};
+printf("Name: %s\n", student1.name);</code>
+            </div>
+
+            <h2>File Handling</h2>
+            <p>C provides file operations for reading and writing:</p>
+            
+            <div class="code-block">
+                <code>// File writing
+FILE *file = fopen("data.txt", "w");
+if (file != NULL) {
+    fprintf(file, "Hello, File!\n");
+    fclose(file);
+}
+
+// File reading
+char buffer[100];
+file = fopen("data.txt", "r");
+if (file != NULL) {
+    fgets(buffer, sizeof(buffer), file);
+    printf("%s", buffer);
+    fclose(file);
+}</code>
+            </div>
+
+            <h2>Memory Management</h2>
+            <p>C provides manual memory management:</p>
+            
+            <div class="code-block">
+                <code>// Dynamic memory allocation
+int *arr = (int *)malloc(5 * sizeof(int));
+if (arr != NULL) {
+    // Use the array
+    for (int i = 0; i < 5; i++) {
+        arr[i] = i;
+    }
+    // Free memory when done
+    free(arr);
+}</code>
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>C is a fundamental programming language that provides low-level access to system resources and memory. Understanding these basics will help you build efficient and powerful programs.</p>
+
+            <h2>FAQs</h2>
+            <p><strong>Q: What is C programming?</strong><br>
+            A: C is a general-purpose, procedural programming language known for its efficiency and low-level access to memory.</p>
+
+            <p><strong>Q: What are C's main features?</strong><br>
+            A: C features include structured programming, low-level memory access, and efficient compilation.</p>
+
+            <p><strong>Q: What can you build with C?</strong><br>
+            A: C can be used to build operating systems, embedded systems, system software, and high-performance applications.</p>
+        </article>
+
+        <aside class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction to C</a></li>
+                <li><a href="#variables">Variables and Data Types</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#control-flow">Control Flow</a></li>
+                <li><a href="#arrays">Arrays and Pointers</a></li>
+                <li><a href="#structures">Structures</a></li>
+                <li><a href="#files">File Handling</a></li>
+                <li><a href="#memory">Memory Management</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <script>
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

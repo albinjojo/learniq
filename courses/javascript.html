@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics - LearnIQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .article-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+
+        .article-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .article-content h1 {
+            color: #00A676;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .article-content h2 {
+            color: #333;
+            margin: 30px 0 15px;
+            font-size: 1.8em;
+        }
+
+        .article-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .article-content code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            display: block;
+            white-space: pre;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .table-of-contents {
+            position: sticky;
+            top: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .table-of-contents h2 {
+            color: #00A676;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin: 10px 0;
+        }
+
+        .table-of-contents a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #00A676;
+        }
+
+        .js-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .js-table th, .js-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .js-table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .property-example {
+            font-family: 'Courier New', Courier, monospace;
+            color: #00A676;
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-of-contents {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../courses.html">Courses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <article class="article-content">
+            <h1>JavaScript Basics for Beginners</h1>
+            
+            <p>JavaScript is a powerful programming language that enables interactive web pages and is an essential part of web applications. This guide will help you understand the fundamentals of JavaScript programming.</p>
+
+            <h2>Introduction to JavaScript</h2>
+            <p>JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It enables interactive web pages and is an essential part of web applications.</p>
+
+            <div class="code-block">
+                <code>// Your first JavaScript program
+console.log("Hello, World!");</code>
+            </div>
+
+            <h2>Variables and Data Types</h2>
+            <p>Variables are containers for storing data values. JavaScript has several data types:</p>
+            
+            <table class="js-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property-example">Number</td>
+                        <td>Represents both integer and floating-point numbers</td>
+                        <td><code>let age = 25;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">String</td>
+                        <td>Represents textual data</td>
+                        <td><code>let name = "John";</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">Boolean</td>
+                        <td>Represents logical values</td>
+                        <td><code>let isStudent = true;</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">Array</td>
+                        <td>Represents a collection of values</td>
+                        <td><code>let fruits = ["apple", "banana"];</code></td>
+                    </tr>
+                    <tr>
+                        <td class="property-example">Object</td>
+                        <td>Represents a collection of properties</td>
+                        <td><code>let person = {name: "John", age: 25};</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Functions</h2>
+            <p>Functions are reusable blocks of code that perform specific tasks:</p>
+            
+            <div class="code-block">
+                <code>// Function declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Arrow function
+const greetArrow = (name) => {
+    return "Hello, " + name + "!";
+}</code>
+            </div>
+
+            <h2>Control Flow</h2>
+            <p>JavaScript provides various control flow statements:</p>
+            
+            <div class="code-block">
+                <code>// if-else statement
+if (age >= 18) {
+    console.log("You are an adult");
+} else {
+    console.log("You are a minor");
+}
+
+// for loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// while loop
+let count = 0;
+while (count < 3) {
+    console.log(count);
+    count++;
+}</code>
+            </div>
+
+            <h2>DOM Manipulation</h2>
+            <p>The Document Object Model (DOM) allows JavaScript to interact with HTML elements:</p>
+            
+            <div class="code-block">
+                <code>// Select elements
+const element = document.getElementById("myId");
+const elements = document.getElementsByClassName("myClass");
+
+// Modify content
+element.innerHTML = "New content";
+element.style.color = "red";
+
+// Add event listeners
+element.addEventListener("click", function() {
+    console.log("Element clicked!");
+});</code>
+            </div>
+
+            <h2>Modern JavaScript (ES6+)</h2>
+            <p>Modern JavaScript includes powerful features:</p>
+            
+            <div class="code-block">
+                <code>// Template literals
+const name = "John";
+console.log(`Hello, ${name}!`);
+
+// Destructuring
+const { title, author } = book;
+
+// Spread operator
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];</code>
+            </div>
+
+            <h2>Error Handling</h2>
+            <p>JavaScript provides try-catch blocks for error handling:</p>
+            
+            <div class="code-block">
+                <code>try {
+    // Code that might throw an error
+    const result = someFunction();
+} catch (error) {
+    // Handle the error
+    console.error("An error occurred:", error);
+}</code>
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>JavaScript is a versatile and powerful language that forms the foundation of modern web development. Understanding these basics will help you build interactive and dynamic web applications.</p>
+
+            <h2>FAQs</h2>
+            <p><strong>Q: What is JavaScript?</strong><br>
+            A: JavaScript is a programming language that enables interactive web pages and is an essential part of web applications.</p>
+
+            <p><strong>Q: What are the basic data types in JavaScript?</strong><br>
+            A: JavaScript has several data types including Number, String, Boolean, Array, and Object.</p>
+
+            <p><strong>Q: What is DOM manipulation?</strong><br>
+            A: DOM manipulation is the process of using JavaScript to interact with and modify HTML elements on a webpage.</p>
+        </article>
+
+        <aside class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction to JavaScript</a></li>
+                <li><a href="#variables">Variables and Data Types</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#control-flow">Control Flow</a></li>
+                <li><a href="#dom">DOM Manipulation</a></li>
+                <li><a href="#modern-js">Modern JavaScript (ES6+)</a></li>
+                <li><a href="#error-handling">Error Handling</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <script>
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -79,6 +79,9 @@
         }
 
         .filter-btn {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
             padding: 10px 20px;
             border: 2px solid #00A676;
             border-radius: 25px;
@@ -181,11 +184,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#" class="btn">Sign In</a></li>
-                <li><a href="#" class="btn">Create Account</a></li>
             </ul>
         </nav>
     </header>
@@ -196,10 +195,14 @@
         
         <div class="filters">
             <button class="filter-btn active">All Courses</button>
-            <button class="filter-btn">UI Design</button>
-            <button class="filter-btn">UX Design</button>
-            <button class="filter-btn">Web Development</button>
-            <button class="filter-btn">Mobile Development</button>
+            <a href="courses/python.html" class="filter-btn">Python</a>
+            <a href="courses/php.html" class="filter-btn">PHP</a>
+            <a href="courses/cpp.html" class="filter-btn">C++</a>
+            <a href="courses/cbasics.html" class="filter-btn">C</a>
+            <a href="courses/html.html" class="filter-btn">HTML</a>
+            <a href="courses/css.html" class="filter-btn">CSS</a>
+            <a href="courses/javascript.html" class="filter-btn">JavaScript</a>
+            <a href="courses/linux.html" class="filter-btn">Linux</a>
         </div>
     </section>
 
@@ -236,19 +239,45 @@
                     link: "courses/css.html"
                 },
                 {
-                    title: "Programming Languages",
-                    description: "Explore core programming concepts and popular languages. Learn syntax, data structures, algorithms, and best practices.",
-                    topics: "Python, Java, JavaScript, C++",
-                    articles: "180+ Lessons",
-                    learnMore: "Learn More"
+                    title: "JavaScript Basics",
+                    description: "Learn fundamental JavaScript programming concepts. Master variables, functions, DOM manipulation, and modern ES6+ features.",
+                    topics: "Variables, Functions, DOM, ES6+",
+                    articles: "60+ Concepts",
+                    learnMore: "Learn More",
+                    link: "courses/javascript.html"
                 },
                 {
-                    title: "System Design",
-                    description: "Learn scalable system design principles and patterns. Master distributed systems, databases, and architecture fundamentals.",
-                    topics: "Architecture, Scalability, Performance",
-                    articles: "120+ Concepts",
-                    learnMore: "Learn More"
-                }
+                    title: "C++ Basics",
+                    description: "Learn fundamental C++ programming concepts. Master variables, functions, classes, and object-oriented programming principles.",
+                    topics: "Variables, Functions, Classes, OOP",
+                    articles: "70+ Concepts",
+                    learnMore: "Learn More",
+                    link: "courses/cpp.html"
+                },
+                {
+                    title: "Python Basics",
+                    description: "Learn fundamental Python programming concepts. Master variables, functions, loops, and object-oriented programming principles.",
+                    topics: "Variables, Functions, Loops, OOP",
+                    articles: "80+ Concepts",
+                    learnMore: "Learn More",
+                    link: "courses/python.html"
+                },
+                {
+                    title: "PHP Basics",
+                    description: "Learn fundamental PHP programming concepts. Master server-side scripting, database integration, and web development with PHP.",
+                    topics: "Variables, Functions, Forms, Database",
+                    articles: "80+ Concepts",
+                    learnMore: "Learn More",
+                    link: "courses/php.html"
+                },
+                {
+                    title: "C Basics",
+                    description: "Master the fundamentals of C programming. Learn memory management, pointers, and low-level programming concepts.",
+                    topics: "Variables, Pointers, Functions, Memory",
+                    articles: "90+ Concepts",
+                    learnMore: "Learn More",
+                    link: "courses/cbasics.html"
+                },
             ];
 
             // Populate course cards

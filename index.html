@@ -47,20 +47,18 @@
         }
 
         .btn {
+            text-decoration: none;
+            display: inline-block;
             padding: 10px 20px;
-            border: none;
+            background-color: #00A676;
+            color: white;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-        }
-
-        .btn.primary {
-            background-color: #00A676;
-            color: #fff;
+            transition: background-color 0.3s ease;
         }
 
         .btn:hover {
-            opacity: 0.9;
+            background-color: #008c63;
         }
 
         .trial {
@@ -73,10 +71,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 50px 80px;
+            padding: 30px 80px;
             background-color: #fff;
             position: relative;
             gap: 40px;
+            min-height: 80vh;
+            max-height: 90vh;
+            overflow: hidden;
         }
 
         .hero-content {
@@ -170,6 +171,8 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             cursor: pointer;
+            position: relative;
+            padding-bottom: 60px; /* Add space for the button */
         }
 
         .card:hover {
@@ -234,10 +237,77 @@
             color: #fff;
         }
 
+        .learn-more-btn {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #00A676;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            width: 80%;
+            text-align: center;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #008c63;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #00A676;
+            font-size: 14px;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid #00A676;
+            border-bottom: 2px solid #00A676;
+            transform: rotate(45deg);
+            margin-top: 5px;
+            animation: arrow-bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes arrow-bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: rotate(45deg) translateY(0);
+            }
+            40% {
+                transform: rotate(45deg) translateY(-5px);
+            }
+            60% {
+                transform: rotate(45deg) translateY(-2px);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero {
-                flex-direction: column;
-                padding: 30px;
+                padding: 20px;
+                min-height: 70vh;
             }
             .hero-content {
                 max-width: 100%;
@@ -262,12 +332,9 @@
         <nav>
             <ul>
                 <li><a href="courses.html">Explore</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#" class="btn">Sign In</a></li>
-                <li><a href="#" class="btn">Create Account</a></li>
+                <li><a href="index.html">Home</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -282,35 +349,39 @@
         <div class="hero-image">
             <img src="assets/womanwithbook.png" alt="Woman with book">
         </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow"></div>
+        </div>
     </section>
 
     <section class="courses">
-        <h2>Creating an interactive and insightful learning experience.</h2>
+        <h2>Creating an insightful learning experience</h2>
         <div class="course-cards">
             <div class="card">
-                <h3>Interaction Design</h3>
+                <h3>PHP Basics</h3>
                 <p>Learn all that covers the most recent advancements</p>
-                <button class="btn">Learn More</button>
+                <a href="courses/php.html" class="btn">Learn More</a>
             </div>
             <div class="card">
-                <h3>Interaction Design</h3>
+                <h3>C++ Basics</h3>
                 <p>Learn all that covers the most recent advancements</p>
-                <button class="btn">Learn More</button>
+                <a href="courses/cpp.html" class="btn">Learn More</a>
             </div>
             <div class="card">
-                <h3>UX Design Course</h3>
-                <p>Choose a course that will cover the most recent trends</p>
-                <button class="btn">Learn More</button>
+                <h3>HTML Tags</h3>
+                <p>Learn all that covers the most recent advancements</p>
+                <a href="courses/html.html" class="btn">Learn More</a>
             </div>
             <div class="card">
-                <h3>User Interface Design</h3>
-                <p>Learn UI design that covers the most recent advancements</p>
-                <button class="btn" onclick="courses.html">Learn More</button>
+                <h3>JavaScript Basics</h3>
+                <p>Learn all that covers the most recent advancements</p>
+                <a href="courses/javascript.html" class="btn">Learn More</a>
             </div>
         </div>
     </section>
 
-    <section class="popular">   
+    <section class="popular">
         <h2>Most Read Topics</h2>
         <p>Explore our expert tutorials, knowledge that truly matters.</p>
         <div class="popular-cards">
@@ -319,28 +390,28 @@
                 <h3>Linux Basic Commands</h3>
                 <p>Basic Linux Commands for Beginners</p>
                 <div class="rating">★★★★☆</div>
-                <p>Julia Miller, 2020</p>
+                <a href="courses/linux.html" class="learn-more-btn">Learn More</a>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/300" alt="Course 2">
+                <img src="assets/python.png" alt="Course 2">
                 <h3>Learn With Shoaib...</h3>
                 <p>Design Web & Mobile Apps Again</p>
                 <div class="rating">★★★★☆</div>
-                <p>John Doe, 2021</p>
+                <a href="courses/python.html" class="learn-more-btn">Learn More</a>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/300" alt="Course 3">
+                <img src="assets/php.png" alt="Course 3">
                 <h3>Building User Interface...</h3>
                 <p>Learn to apply User Experience designs</p>
                 <div class="rating">★★★★★</div>
-                <p>Sarah Smith, 2020</p>
+                <a href="courses/php.html" class="learn-more-btn">Learn More</a>
             </div>
             <div class="card">
-                <img src="assets/uiux.jpg" alt="Course 1">
+                <img src="assets/css.png" alt="Course 1">
                 <h3>Figma UI/UX Design...</h3>
                 <p>Figure out how to get the job done!</p>
                 <div class="rating">★★★★☆</div>
-                <p>Julia Miller, 2020</p>
+                <a href="courses/css.html" class="learn-more-btn">Learn More</a>
             </div>
         </div>
         <button class="btn explore">Explore All Programs</button>
