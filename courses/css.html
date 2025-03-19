@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnIQ - CSS Styles Guide</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .article-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            color: #00A676;
+            margin: 30px 0 15px;
+            font-size: 24px;
+        }
+
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            color: #00A676;
+        }
+
+        .note {
+            background-color: #e0f7f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #00A676;
+        }
+
+        .table-of-contents {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .table-of-contents h3 {
+            color: #00A676;
+            margin-bottom: 15px;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin: 10px 0;
+        }
+
+        .table-of-contents a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #00A676;
+        }
+
+        .css-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .css-table th,
+        .css-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .css-table th {
+            background-color: #00A676;
+            color: white;
+        }
+
+        .css-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .css-table tr:hover {
+            background-color: #e0f7f0;
+        }
+
+        .property-example {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #00A676;
+        }
+
+        .preview-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 20px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+
+            .css-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../courses.html">Courses</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="btn">Sign In</a></li>
+                <li><a href="#" class="btn">Create Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <article>
+            <div class="article-header">
+                <h1 class="article-title">CSS Styles Guide – A Complete Reference</h1>
+                <div class="article-meta">Last Updated : 03 Dec, 2024</div>
+            </div>
+
+            <div class="article-content">
+                <p>CSS (Cascading Style Sheets) is the language used to style and layout web pages. It describes how HTML elements should be displayed and allows you to create responsive and visually appealing websites.</p>
+
+                <div class="table-of-contents">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#introduction">Introduction to CSS</a></li>
+                        <li><a href="#selectors">CSS Selectors</a></li>
+                        <li><a href="#properties">Common CSS Properties</a></li>
+                        <li><a href="#box-model">The Box Model</a></li>
+                        <li><a href="#layout">Layout Properties</a></li>
+                        <li><a href="#responsive">Responsive Design</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="introduction">Introduction to CSS</h2>
+                <p>CSS works by selecting HTML elements and applying styles to them. There are three ways to add CSS to your HTML:</p>
+                
+                <div class="note">
+                    <p>1. Inline CSS: Using the style attribute</p>
+                    <p>2. Internal CSS: Using the &lt;style&gt; tag in the head section</p>
+                    <p>3. External CSS: Using a separate .css file</p>
+                </div>
+
+                <h2 id="selectors">CSS Selectors</h2>
+                <table class="css-table">
+                    <thead>
+                        <tr>
+                            <th>Selector</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-example">element</td>
+                            <td>Selects all elements of the specified type</td>
+                            <td><code>p { color: blue; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">.class</td>
+                            <td>Selects elements with the specified class</td>
+                            <td><code>.highlight { background: yellow; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">#id</td>
+                            <td>Selects element with the specified ID</td>
+                            <td><code>#header { font-size: 24px; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">*</td>
+                            <td>Universal selector - selects all elements</td>
+                            <td><code>* { margin: 0; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">element element</td>
+                            <td>Descendant selector - matches all instances of element inside element</td>
+                            <td><code>div p { margin: 10px; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">element > element</td>
+                            <td>Child selector - selects direct children only</td>
+                            <td><code>div > p { margin: 10px; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">element + element</td>
+                            <td>Adjacent sibling selector</td>
+                            <td><code>h1 + p { margin-top: 20px; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">:hover</td>
+                            <td>Selects element when mouse hovers over it</td>
+                            <td><code>button:hover { background: blue; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">::before</td>
+                            <td>Creates a pseudo-element before the content</td>
+                            <td><code>p::before { content: "→"; }</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">::after</td>
+                            <td>Creates a pseudo-element after the content</td>
+                            <td><code>p::after { content: "←"; }</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="properties">Common CSS Properties</h2>
+                <table class="css-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-example">color</td>
+                            <td>Sets the text color</td>
+                            <td><code>color: #00A676;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">background</td>
+                            <td>Sets all background properties</td>
+                            <td><code>background: #f5f5f5 url('bg.jpg') no-repeat center;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">font-family</td>
+                            <td>Sets the font family for text</td>
+                            <td><code>font-family: 'Arial', sans-serif;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">font-size</td>
+                            <td>Sets the font size</td>
+                            <td><code>font-size: 16px;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">font-weight</td>
+                            <td>Sets the thickness of text</td>
+                            <td><code>font-weight: bold;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">text-align</td>
+                            <td>Sets text alignment</td>
+                            <td><code>text-align: center;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">margin</td>
+                            <td>Sets outer spacing</td>
+                            <td><code>margin: 10px 20px;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">padding</td>
+                            <td>Sets inner spacing</td>
+                            <td><code>padding: 15px;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">border</td>
+                            <td>Sets element borders</td>
+                            <td><code>border: 1px solid #ddd;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">border-radius</td>
+                            <td>Sets rounded corners</td>
+                            <td><code>border-radius: 8px;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">display</td>
+                            <td>Sets how an element should be displayed</td>
+                            <td><code>display: flex;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">position</td>
+                            <td>Sets positioning method</td>
+                            <td><code>position: relative;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">top, right, bottom, left</td>
+                            <td>Sets position coordinates</td>
+                            <td><code>top: 0; left: 0;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">z-index</td>
+                            <td>Sets stack order of elements</td>
+                            <td><code>z-index: 100;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">opacity</td>
+                            <td>Sets element transparency</td>
+                            <td><code>opacity: 0.8;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">transform</td>
+                            <td>Applies 2D or 3D transformations</td>
+                            <td><code>transform: rotate(45deg);</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">transition</td>
+                            <td>Sets transition effects</td>
+                            <td><code>transition: all 0.3s ease;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">animation</td>
+                            <td>Sets animation properties</td>
+                            <td><code>animation: slide 1s ease infinite;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="box-model">The Box Model</h2>
+                <p>The CSS box model is the foundation of layout on the web. Every element is represented as a rectangular box, with content, padding, border, and margin.</p>
+                
+                <div class="code-block">
+                    <code>
+.box {
+    content: "actual content";
+    padding: 20px;
+    border: 1px solid black;
+    margin: 10px;
+}
+                    </code>
+                </div>
+
+                <h2 id="layout">Layout Properties</h2>
+                <table class="css-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-example">flex</td>
+                            <td>Creates flexible layouts</td>
+                            <td><code>display: flex;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">grid</td>
+                            <td>Creates grid layouts</td>
+                            <td><code>display: grid;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="property-example">float</td>
+                            <td>Floats elements left or right</td>
+                            <td><code>float: left;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="responsive">Responsive Design</h2>
+                <p>CSS provides several tools for creating responsive designs that adapt to different screen sizes:</p>
+                
+                <div class="code-block">
+                    <code>
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+                    </code>
+                </div>
+
+                <h2 id="conclusion">Conclusion</h2>
+                <p>CSS is a powerful language that gives you complete control over the look and feel of your website. Understanding these fundamental concepts will help you create beautiful and responsive web designs.</p>
+
+                <div class="faq-section" id="faq">
+                    <h2>CSS – FAQs</h2>
+                    <h3>What is CSS specificity?</h3>
+                    <p>CSS specificity is the set of rules used to determine which style declarations are ultimately applied to an element. The more specific a selector is, the higher its precedence.</p>
+
+                    <h3>What are CSS preprocessors?</h3>
+                    <p>CSS preprocessors like Sass and Less extend CSS with additional features like variables, nested rules, mixins, and functions, making stylesheets more maintainable.</p>
+
+                    <h3>What is the difference between margin and padding?</h3>
+                    <p>Margin creates space outside an element's border, while padding creates space inside the border, between the border and the content.</p>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.table-of-contents a').click(function(e) {
+                e.preventDefault();
+                const targetId = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(targetId).offset().top - 100
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

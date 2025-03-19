@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnIQ - Courses</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .courses-header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .courses-header h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .courses-header h1 span {
+            color: #00A676;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #00A676;
+            border-radius: 25px;
+            background: transparent;
+            color: #00A676;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #00A676;
+            color: white;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background-color: #e0f7f0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .course-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .learn-more-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #00A676;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #008c63;
+        }
+
+        @media (max-width: 768px) {
+            .course-grid {
+                padding: 20px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="btn">Sign In</a></li>
+                <li><a href="#" class="btn">Create Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="courses-header">
+        <h1>Explore Our <span>Courses</span></h1>
+        <p>Find the perfect course to advance your career and skills</p>
+        
+        <div class="filters">
+            <button class="filter-btn active">All Courses</button>
+            <button class="filter-btn">UI Design</button>
+            <button class="filter-btn">UX Design</button>
+            <button class="filter-btn">Web Development</button>
+            <button class="filter-btn">Mobile Development</button>
+        </div>
+    </section>
+
+    <section class="course-grid">
+        <!-- Course cards will be dynamically populated -->
+    </section>
+
+    <script>
+        $(document).ready(function() {
+            // Sample course data
+            const courses = [
+                {
+                    title: "Linux Basic Commands",
+                    description: "Master essential Linux commands for system administration and daily operations. Learn file management, process control, and system navigation.",
+                    topics: "File System, Process Management, System Tools",
+                    articles: "50+ Commands",
+                    learnMore: "Learn More",
+                    link: "courses/linux.html"
+                },
+                {
+                    title: "HTML Basic Tags",
+                    description: "Learn fundamental HTML tags and elements with practical examples. Master semantic markup and structure for modern web development.",
+                    topics: "Document Structure, Text Elements, Media Tags",
+                    articles: "40+ Tags",
+                    learnMore: "Learn More",
+                    link: "courses/html.html"
+                },
+                {
+                    title: "CSS Basic Styles",
+                    description: "Master essential CSS styling techniques. Learn selectors, properties, layouts, and responsive design principles for modern websites.",
+                    topics: "Selectors, Box Model, Layouts, Animations",
+                    articles: "100+ Properties",
+                    learnMore: "Learn More",
+                    link: "courses/css.html"
+                },
+                {
+                    title: "Programming Languages",
+                    description: "Explore core programming concepts and popular languages. Learn syntax, data structures, algorithms, and best practices.",
+                    topics: "Python, Java, JavaScript, C++",
+                    articles: "180+ Lessons",
+                    learnMore: "Learn More"
+                },
+                {
+                    title: "System Design",
+                    description: "Learn scalable system design principles and patterns. Master distributed systems, databases, and architecture fundamentals.",
+                    topics: "Architecture, Scalability, Performance",
+                    articles: "120+ Concepts",
+                    learnMore: "Learn More"
+                }
+            ];
+
+            // Populate course cards
+            function populateCourses(courseList) {
+                const grid = $('.course-grid');
+                grid.empty();
+                
+                courseList.forEach(course => {
+                    const card = `
+                        <div class="course-card">
+                            <div class="course-content">
+                                <h3 class="course-title">${course.title}</h3>
+                                <p class="course-description">${course.description}</p>
+                                <div class="course-meta">
+                                    <div>Topics: ${course.topics}</div>
+                                    <div>${course.articles}</div>
+                                </div>
+                                <a href="${course.link || '#'}" class="learn-more-btn">${course.learnMore}</a>
+                            </div>
+                        </div>
+                    `;
+                    grid.append(card);
+                });
+            }
+
+            // Initial population
+            populateCourses(courses);
+
+            // Filter button clicks
+            $('.filter-btn').click(function() {
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                // Filter logic would go here
+                populateCourses(courses);
+            });
+
+            // Handle URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseParam = urlParams.get('course');
+            if (courseParam) {
+                // Scroll to the specific course if it exists
+                const courseElement = $(`.course-title:contains('${decodeURIComponent(courseParam)}')`);
+                if (courseElement.length) {
+                    courseElement[0].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnIQ - Linux Commands</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .article-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            color: #00A676;
+            margin: 30px 0 15px;
+            font-size: 24px;
+        }
+
+        .command-block {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+
+        .command-block code {
+            color: #00A676;
+            font-weight: bold;
+        }
+
+        .note {
+            background-color: #e0f7f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #00A676;
+        }
+
+        .table-of-contents {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .table-of-contents h3 {
+            color: #00A676;
+            margin-bottom: 15px;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin: 10px 0;
+        }
+
+        .table-of-contents a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #00A676;
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 20px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="btn">Sign In</a></li>
+                <li><a href="#" class="btn">Create Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <article>
+            <div class="article-header">
+                <h1 class="article-title">Basic Linux Commands For Beginners [2025]</h1>
+                <div class="article-meta">Last Updated : 19 March, 2025</div>
+            </div>
+
+            <div class="article-content">
+                <p>While performing a task, we all need shortcuts. Shortcuts help us to complete a task quickly. Linux comes with such commands which are one to two words, using that commands, you can perform several operations in no time. As a beginner, you must be aware of those basic Linux commands to complete an operation in a short time in the Linux-based operating system.</p>
+
+                <div class="table-of-contents">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#what-is-linux">What is Linux?</a></li>
+                        <li><a href="#use-of-linux">Use of Linux Commands</a></li>
+                        <li><a href="#common-commands">Most-Commonly Used Linux Commands</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="what-is-linux">What is Linux?</h2>
+                <p>Linux is a free and open-source software that operates on its own operating system. The term 'Linux' stands for GNU + Linux. Initially developed by Linus Torvalds, it was created alongside the source code of Unix. While Linux is extensively utilized for various purposes, its applications are well-known to many.</p>
+
+                <h2 id="use-of-linux">Use of Linux Commands</h2>
+                <p>Linux commands are a type of Unix command or shell procedure. They are the basic tools used to interact with Linux on an individual level. Linux commands are used to perform a variety of tasks, including displaying information about files and directories.</p>
+                <p>Linux operating system is used on servers, desktops, and maybe even your smartphone. It has a lot of command line tools that can be used for virtually everything on the system.</p>
+
+                <div class="note">
+                    <strong>Note:</strong> If you're looking to set up your own Linux server to practice these commands or host projects, Hostinger can be a great option. Hostinger provides affordable VPS hosting plans with full Linux support, including popular distributions like Ubuntu, CentOS, and Debian.
+                </div>
+
+                <h2 id="common-commands">Most-Commonly Used Linux Commands</h2>
+                
+                <h3>1. ls command in Linux</h3>
+                <p>The ls command is commonly used to identify the files and directories in the working directory. This command is one of the many often-used Linux commands that you should know.</p>
+                <div class="command-block">
+                    <code>ls</code>
+                </div>
+                <p>This command can be used by itself without any arguments and it will provide us the output with all the details about the files and the directories in the current working directory. There is a lot of flexibility offered by this command in terms of displaying data in the output.</p>
+
+                <h3>2. pwd command in Linux</h3>
+                <p>The pwd command is mostly used to print the current working directory on your terminal. It is also one of the most commonly used commands.</p>
+                <div class="command-block">
+                    <code>pwd</code>
+                </div>
+                <p>Now, your terminal prompt should usually include the entire directory. If it doesn't, this is a quick command to see which directory you're in. Another purpose for this command is when creating scripts because it can help us find the directory in which the script was saved.</p>
+
+                <h3>3. mkdir command in Linux</h3>
+                <p>This mkdir command allows you to create fresh directories in the terminal itself. The default syntax is mkdir &lt;directory name&gt; and the new directory will be created.</p>
+                <div class="command-block">
+                    <code>mkdir GeeksforGeeks</code>
+                </div>
+
+                <h3>4. cd command in Linux</h3>
+                <p>The cd command is used to navigate between directories. It requires either the full path or the directory name, depending on your current working directory. If you run this command without any options, it will take you to your home folder. Keep in mind that it can only be executed by users with sudo privileges.</p>
+                <div class="command-block">
+                    <code>cd directory_name</code>
+                </div>
+
+                <h3>5. rmdir command in Linux</h3>
+                <p>The rmdir command is used to delete permanently an empty directory. To perform this command the user running this command must be having sudo privileges in the parent directory.</p>
+                <div class="command-block">
+                    <code>rmdir directory_name</code>
+                </div>
+
+                <h3>6. cp command in Linux</h3>
+                <p>The cp command is used to copy files or directories. It creates a copy of the source file or directory at the specified destination. This command requires read permissions for the source and write permissions for the destination.</p>
+                <div class="command-block">
+                    <code>cp source_file destination_file</code>
+                </div>
+
+                <h3>7. mv command in Linux</h3>
+                <p>The mv command is used to move or rename files and directories. It can move a single file or multiple files to a destination directory, or rename a file or directory.</p>
+                <div class="command-block">
+                    <code>mv source_file destination_file</code>
+                </div>
+
+                <h3>8. rm command in Linux</h3>
+                <p>The rm command is used to remove files or directories. It can delete multiple files at once and has options for recursive deletion of directories. Be careful with this command as it permanently deletes files.</p>
+                <div class="command-block">
+                    <code>rm file_name</code>
+                </div>
+
+                <h3>9. uname command in Linux</h3>
+                <p>The uname command displays system information. It can show the operating system name, system hostname, kernel release date, version, hardware platform, and processor information.</p>
+                <div class="command-block">
+                    <code>uname [options]</code>
+                </div>
+
+                <h3>10. locate command in Linux</h3>
+                <p>The locate command is used to find files by name. It searches through a pre-built database of files and directories, making it faster than the find command for simple searches. The database is typically updated daily.</p>
+                <div class="command-block">
+                    <code>locate file_name</code>
+                </div>
+
+                <h3>11. touch command in Linux</h3>
+                <p>The touch command is used to create empty files or update the timestamp of existing files. It's particularly useful when you need to create multiple files at once or update file access times.</p>
+                <div class="command-block">
+                    <code>touch file_name</code>
+                </div>
+
+                <h3>12. ln command in Linux</h3>
+                <p>The ln command is used to create links between files. It can create both hard links and symbolic links (symlinks). Hard links are exact copies of the original file, while symlinks are pointers to the original file.</p>
+                <div class="command-block">
+                    <code>ln -s source_file link_name</code>
+                </div>
+
+                <h3>13. cat command in Linux</h3>
+                <p>The cat command is used to view, create, and concatenate files. It can display file contents, combine multiple files, and create new files. It's one of the most frequently used commands for file operations.</p>
+                <div class="command-block">
+                    <code>cat file_name</code>
+                </div>
+
+                <h3>14. clear command in Linux</h3>
+                <p>The clear command is used to clear the terminal screen. It removes all previous commands and output, giving you a clean workspace. This command is equivalent to pressing Ctrl+L in most terminals.</p>
+                <div class="command-block">
+                    <code>clear</code>
+                </div>
+
+                <h3>15. ps command in Linux</h3>
+                <p>The ps command displays information about running processes. It shows process IDs, CPU usage, memory usage, and other details about active processes. It's essential for system monitoring and process management.</p>
+                <div class="command-block">
+                    <code>ps [options]</code>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for table of contents links
+            $('.table-of-contents a').click(function(e) {
+                e.preventDefault();
+                const targetId = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(targetId).offset().top - 100
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

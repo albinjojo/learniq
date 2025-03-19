@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnIQ - HTML Tags</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .article-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .article-content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            color: #00A676;
+            margin: 30px 0 15px;
+            font-size: 24px;
+        }
+
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            color: #00A676;
+        }
+
+        .note {
+            background-color: #e0f7f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #00A676;
+        }
+
+        .table-of-contents {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .table-of-contents h3 {
+            color: #00A676;
+            margin-bottom: 15px;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin: 10px 0;
+        }
+
+        .table-of-contents a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #00A676;
+        }
+
+        .tags-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .tags-table th,
+        .tags-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .tags-table th {
+            background-color: #00A676;
+            color: white;
+        }
+
+        .tags-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tags-table tr:hover {
+            background-color: #e0f7f0;
+        }
+
+        .tag-example {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #00A676;
+        }
+
+        .faq-section {
+            margin-top: 40px;
+        }
+
+        .faq-section h3 {
+            color: #00A676;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 20px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+
+            .tags-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../courses.html">Courses</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="btn">Sign In</a></li>
+                <li><a href="#" class="btn">Create Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <article>
+            <div class="article-header">
+                <h1 class="article-title">HTML Tags – A to Z List</h1>
+                <div class="article-meta">Last Updated : 03 Dec, 2024</div>
+            </div>
+
+            <div class="article-content">
+                <p>HTML Tags are fundamental elements used to structure and format content on web pages. They provide instructions to web browsers on how to render text, images, links, and other media.</p>
+
+                <div class="table-of-contents">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#introduction">Introduction to HTML Tags</a></li>
+                        <li><a href="#basic-example">Basic HTML Tag Example</a></li>
+                        <li><a href="#a-z-tags">A to Z HTML Tags</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="introduction">Introduction to HTML Tags</h2>
+                <p>HTML tags are enclosed in angle brackets < > and usually come in pairs: an opening tag and a closing tag. The closing tag has the same text as the opening tag, but with an additional forward-slash /. The opening tag marks the beginning of an element, while the closing tag marks the end.</p>
+
+                <div class="note">
+                    <p>For example:</p>
+                    <span class="tag-example">&lt;p&gt;</span> is an opening tag for a paragraph.<br>
+                    <span class="tag-example">&lt;/p&gt;</span> is the closing tag.
+                </div>
+
+                <p>Some tags are self-closing, meaning they don't require a closing tag, such as <span class="tag-example">&lt;img&gt;</span> and <span class="tag-example">&lt;br&gt;</span>.</p>
+
+                <h2 id="basic-example">Basic HTML Tag Example</h2>
+                <div class="code-block">
+                    <code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+    &lt;title&gt;Welcome to LearnIQ&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+    &lt;h2&gt;LearnIQ&lt;/h2&gt;<br>
+    &lt;p&gt;A Learning Portal for Everyone&lt;/p&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+                    </code>
+                </div>
+
+                <h2 id="a-z-tags">A to Z HTML Tags</h2>
+                <table class="tags-table">
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Description</th>
+                            <th>Syntax</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tag-example">&lt;!DOCTYPE html&gt;</td>
+                            <td>According to the HTML specification or standards, every HTML document requires a document type declaration.</td>
+                            <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;abbr&gt;</td>
+                            <td>The abbreviation tag in HTML is used to define the abbreviation or short form of an element.</td>
+                            <td><code>&lt;abbr title=""&gt;...&lt;/abbr&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;address&gt;</td>
+                            <td>The address tag in HTML indicates the contact information of a person or an organization.</td>
+                            <td><code>&lt;address&gt;...&lt;/address&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;article&gt;</td>
+                            <td>The article tag is used to represent an article. It's a sectioning element in HTML5.</td>
+                            <td><code>&lt;article&gt;...&lt;/article&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;aside&gt;</td>
+                            <td>Used to describe the main object of the web page in a shorter way like a highlighter.</td>
+                            <td><code>&lt;aside&gt;...&lt;/aside&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;audio&gt;</td>
+                            <td>Used to add audio such as songs, interviews, etc. on your webpage.</td>
+                            <td><code>&lt;audio&gt;...&lt;/audio&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;b&gt;</td>
+                            <td>The bold tag is used to specify the bold text without any extra importance.</td>
+                            <td><code>&lt;b&gt;...&lt;/b&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;body&gt;</td>
+                            <td>Used to define the main content present inside an HTML page.</td>
+                            <td><code>&lt;body&gt;...&lt;/body&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;br&gt;</td>
+                            <td>Inserts a single line break in the document.</td>
+                            <td><code>&lt;br&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;button&gt;</td>
+                            <td>Used to define a clickable button.</td>
+                            <td><code>&lt;button type="button"&gt;...&lt;/button&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;div&gt;</td>
+                            <td>Used to make divisions of content in the web page.</td>
+                            <td><code>&lt;div&gt;...&lt;/div&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;form&gt;</td>
+                            <td>Used for creating forms for user input.</td>
+                            <td><code>&lt;form&gt;...&lt;/form&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;h1&gt; to &lt;h6&gt;</td>
+                            <td>Defines HTML headings with different levels of importance.</td>
+                            <td><code>&lt;h1&gt;...&lt;/h1&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;head&gt;</td>
+                            <td>Contains metadata about the HTML document.</td>
+                            <td><code>&lt;head&gt;...&lt;/head&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;header&gt;</td>
+                            <td>Represents introductory content or navigation links.</td>
+                            <td><code>&lt;header&gt;...&lt;/header&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;img&gt;</td>
+                            <td>Used to embed images in the document.</td>
+                            <td><code>&lt;img src="" alt=""&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;input&gt;</td>
+                            <td>Creates interactive controls for forms.</td>
+                            <td><code>&lt;input type=""&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;link&gt;</td>
+                            <td>Links external resources to the document.</td>
+                            <td><code>&lt;link rel="" href=""&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;nav&gt;</td>
+                            <td>Defines navigation links.</td>
+                            <td><code>&lt;nav&gt;...&lt;/nav&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;p&gt;</td>
+                            <td>Defines a paragraph.</td>
+                            <td><code>&lt;p&gt;...&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;script&gt;</td>
+                            <td>Embeds client-side JavaScript.</td>
+                            <td><code>&lt;script&gt;...&lt;/script&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;section&gt;</td>
+                            <td>Defines sections in a document.</td>
+                            <td><code>&lt;section&gt;...&lt;/section&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;span&gt;</td>
+                            <td>Inline container for text and elements.</td>
+                            <td><code>&lt;span&gt;...&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;style&gt;</td>
+                            <td>Contains style information for a document.</td>
+                            <td><code>&lt;style&gt;...&lt;/style&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;table&gt;</td>
+                            <td>Creates a table.</td>
+                            <td><code>&lt;table&gt;...&lt;/table&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;title&gt;</td>
+                            <td>Defines the document title.</td>
+                            <td><code>&lt;title&gt;...&lt;/title&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;ul&gt;</td>
+                            <td>Creates an unordered list.</td>
+                            <td><code>&lt;ul&gt;...&lt;/ul&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;video&gt;</td>
+                            <td>Embeds video content.</td>
+                            <td><code>&lt;video&gt;...&lt;/video&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;a&gt;</td>
+                            <td>Defines a hyperlink.</td>
+                            <td><code>&lt;a href="#"&gt;Link&lt;/a&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;blockquote&gt;</td>
+                            <td>Defines a section that is quoted from another source.</td>
+                            <td><code>&lt;blockquote&gt;Quote&lt;/blockquote&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;canvas&gt;</td>
+                            <td>Used to draw graphics via scripting (e.g., JavaScript).</td>
+                            <td><code>&lt;canvas&gt;&lt;/canvas&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;caption&gt;</td>
+                            <td>Defines a table caption.</td>
+                            <td><code>&lt;caption&gt;Table Caption&lt;/caption&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;code&gt;</td>
+                            <td>Defines a piece of computer code.</td>
+                            <td><code>&lt;code&gt;print(&quot;Hello&quot;)&lt;/code&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;details&gt;</td>
+                            <td>Creates a collapsible element.</td>
+                            <td><code>&lt;details&gt;&lt;summary&gt;More info&lt;/summary&gt;Details here&lt;/details&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;em&gt;</td>
+                            <td>Defines emphasized text.</td>
+                            <td><code>&lt;em&gt;Emphasized&lt;/em&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;figure&gt;</td>
+                            <td>Used to group media elements like images with captions.</td>
+                            <td><code>&lt;figure&gt;&lt;img src="image.jpg" alt=""&gt;&lt;figcaption&gt;Caption&lt;/figcaption&gt;&lt;/figure&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;mark&gt;</td>
+                            <td>Highlights text.</td>
+                            <td><code>&lt;mark&gt;Highlighted&lt;/mark&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;progress&gt;</td>
+                            <td>Represents the progress of a task.</td>
+                            <td><code>&lt;progress value="50" max="100"&gt;&lt;/progress&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;small&gt;</td>
+                            <td>Defines smaller text.</td>
+                            <td><code>&lt;small&gt;Small Text&lt;/small&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;strong&gt;</td>
+                            <td>Defines important text.</td>
+                            <td><code>&lt;strong&gt;Important&lt;/strong&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;sub&gt;</td>
+                            <td>Defines subscript text.</td>
+                            <td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;sup&gt;</td>
+                            <td>Defines superscript text.</td>
+                            <td><code>x&lt;sup&gt;2&lt;/sup&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td class="tag-example">&lt;time&gt;</td>
+                            <td>Represents a date/time.</td>
+                            <td><code>&lt;time datetime="2024-09-22"&gt;September 22, 2024&lt;/time&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="conclusion">Conclusion</h2>
+                <p>This A to Z guide of HTML tags serves as a comprehensive resource, whether you're a beginner just starting your web development journey or an experienced developer looking for a quick reference. Remember, the power of HTML lies in its simplicity and versatility.</p>
+
+                <div class="faq-section" id="faq">
+                    <h2>HTML Tags – FAQs</h2>
+                    <h3>How do HTML tags work?</h3>
+                    <p>HTML tags instruct web browsers on how to render content. For example, &lt;p&gt; tags define paragraphs, &lt;a&gt; tags create hyperlinks, and &lt;img&gt; tags embed images. Attributes within tags provide additional information or modify the tag's behavior.</p>
+
+                    <h3>What are semantic HTML tags?</h3>
+                    <p>Semantic HTML tags (&lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, etc.) provide meaning to the content they enclose, aiding accessibility, SEO (Search Engine Optimization), and structuring of web pages beyond mere presentation.</p>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for table of contents links
+            $('.table-of-contents a').click(function(e) {
+                e.preventDefault();
+                const targetId = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(targetId).offset().top - 100
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -261,11 +261,10 @@
         <div class="logo">LearnIQ</div>
         <nav>
             <ul>
-                <li><a href="#">Want to learn?</a></li>
-                <li><a href="#">Explore</a></li>
+                <li><a href="courses.html">Explore</a></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Courses</a></li>
+                <li><a href="courses.html">Courses</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#" class="btn">Sign In</a></li>
                 <li><a href="#" class="btn">Create Account</a></li>
@@ -286,7 +285,7 @@
     </section>
 
     <section class="courses">
-        <h2>Fostering a playful & engaging learning environment</h2>
+        <h2>Creating an interactive and insightful learning experience.</h2>
         <div class="course-cards">
             <div class="card">
                 <h3>Interaction Design</h3>
@@ -311,14 +310,14 @@
         </div>
     </section>
 
-    <section class="popular">
-        <h2>Our Most Popular Class</h2>
-        <p>Let's join our famous class, the knowledge will definitely be useful for you.</p>
+    <section class="popular">   
+        <h2>Most Read Topics</h2>
+        <p>Explore our expert tutorials, knowledge that truly matters.</p>
         <div class="popular-cards">
             <div class="card">
-                <img src="assets/uiux.jpg" alt="Course 1">
-                <h3>Figma UI/UX Design...</h3>
-                <p>Figure out how to get the job done!</p>
+                <img src="assets/Learn Linux.png" alt="Course 1">
+                <h3>Linux Basic Commands</h3>
+                <p>Basic Linux Commands for Beginners</p>
                 <div class="rating">★★★★☆</div>
                 <p>Julia Miller, 2020</p>
             </div>
@@ -351,7 +350,7 @@
         $(document).ready(function() {
             // Button click events
             $('.btn.primary').click(function() {
-                alert('Get Started clicked! Redirecting to course selection...');
+                window.location.href = 'courses.html';
             });
 
             $('.trial').click(function(e) {
@@ -360,11 +359,14 @@
             });
 
             $('.card button').click(function() {
-                alert('Learn More clicked! Redirecting to course details...');
+                // Get the course title from the card
+                const courseTitle = $(this).closest('.card').find('h3').text();
+                // Navigate to courses.html with the course title as a parameter
+                window.location.href = `courses.html?course=${encodeURIComponent(courseTitle)}`;
             });
 
             $('.explore').click(function() {
-                alert('Exploring all programs! Redirecting to catalog...');
+                window.location.href = 'courses.html';
             });
 
             // Fade-in animation for cards
