@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnIQ</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn.primary {
+            background-color: #00A676;
+            color: #fff;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .trial {
+            margin-left: 10px;
+            color: #00A676;
+            text-decoration: underline;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 80px;
+            background-color: #fff;
+            position: relative;
+            gap: 40px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 0;
+            object-fit: cover;
+            background-color: transparent;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: #00A676;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stats span {
+            background-color: #00A676;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 180px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .partners {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .courses, .popular {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .courses h2, .popular h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .course-cards, .popular-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #e0f7f0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: left;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: #d0f0e8;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .card button {
+            width: 100%;
+            margin-top: 10px;
+            background-color: #00A676;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #008c63;
+        }
+
+        .popular .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00A676;
+        }
+
+        .explore {
+            margin-top: 20px;
+            background-color: #00A676;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 30px;
+            }
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            .hero-image {
+                width: 100%;
+            }
+            .hero-image img {
+                max-width: 100%;
+            }
+            .course-cards, .popular-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LearnIQ</div>
+        <nav>
+            <ul>
+                <li><a href="#">Want to learn?</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="btn">Sign In</a></li>
+                <li><a href="#" class="btn">Create Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Up Your <span>Skills</span><br>To <span>Advance</span> Your<br><span>Career</span> Path</h1>
+            <p>Your ultimate tech guide – explore in-depth, easy-to-understand tutorials on programming,
+                 development, and the latest technologies. Learn at your own pace, one article at a time!</p>
+            <button class="btn primary">Get Started</button>   
+        </div>
+        <div class="hero-image">
+            <img src="assets/womanwithbook.png" alt="Woman with book">
+        </div>
+    </section>
+
+    <section class="courses">
+        <h2>Fostering a playful & engaging learning environment</h2>
+        <div class="course-cards">
+            <div class="card">
+                <h3>Interaction Design</h3>
+                <p>Learn all that covers the most recent advancements</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="card">
+                <h3>Interaction Design</h3>
+                <p>Learn all that covers the most recent advancements</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="card">
+                <h3>UX Design Course</h3>
+                <p>Choose a course that will cover the most recent trends</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="card">
+                <h3>User Interface Design</h3>
+                <p>Learn UI design that covers the most recent advancements</p>
+                <button class="btn" onclick="courses.html">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular">
+        <h2>Our Most Popular Class</h2>
+        <p>Let's join our famous class, the knowledge will definitely be useful for you.</p>
+        <div class="popular-cards">
+            <div class="card">
+                <img src="assets/uiux.jpg" alt="Course 1">
+                <h3>Figma UI/UX Design...</h3>
+                <p>Figure out how to get the job done!</p>
+                <div class="rating">★★★★☆</div>
+                <p>Julia Miller, 2020</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Course 2">
+                <h3>Learn With Shoaib...</h3>
+                <p>Design Web & Mobile Apps Again</p>
+                <div class="rating">★★★★☆</div>
+                <p>John Doe, 2021</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Course 3">
+                <h3>Building User Interface...</h3>
+                <p>Learn to apply User Experience designs</p>
+                <div class="rating">★★★★★</div>
+                <p>Sarah Smith, 2020</p>
+            </div>
+            <div class="card">
+                <img src="assets/uiux.jpg" alt="Course 1">
+                <h3>Figma UI/UX Design...</h3>
+                <p>Figure out how to get the job done!</p>
+                <div class="rating">★★★★☆</div>
+                <p>Julia Miller, 2020</p>
+            </div>
+        </div>
+        <button class="btn explore">Explore All Programs</button>
+    </section>
+
+    <script>
+        $(document).ready(function() {
+            // Button click events
+            $('.btn.primary').click(function() {
+                alert('Get Started clicked! Redirecting to course selection...');
+            });
+
+            $('.trial').click(function(e) {
+                e.preventDefault();
+                alert('Free Trial requested! Check your email.');
+            });
+
+            $('.card button').click(function() {
+                alert('Learn More clicked! Redirecting to course details...');
+            });
+
+            $('.explore').click(function() {
+                alert('Exploring all programs! Redirecting to catalog...');
+            });
+
+            // Fade-in animation for cards
+            $('.card').hide().fadeIn(1000);
+        });
+    </script>
+</body>
+</html>
